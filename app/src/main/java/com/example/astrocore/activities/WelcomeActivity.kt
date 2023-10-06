@@ -17,7 +17,7 @@ class WelcomeActivity : AppCompatActivity() {
         // Set the status bar and navigation bar to transparent
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
 
-// Set the status bar and navigation bar background to transparent
+        // Set the status bar and navigation bar background to transparent
         window.statusBarColor = Color.TRANSPARENT
         window.navigationBarColor = Color.TRANSPARENT
         setContentView(R.layout.activity_welcome)
