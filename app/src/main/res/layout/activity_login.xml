@@ -8,6 +8,7 @@
     tools:context=".activities.LoginActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,11 +33,11 @@
                 android:layout_marginBottom="12dp">
 
                 <EditText
+                    android:id="@+id/loginemail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_background"
                     android:hint="Email"
-                    android:id="@+id/loginemail"
                     android:padding="8dp"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
@@ -56,11 +57,11 @@
                 android:layout_marginBottom="12dp">
 
                 <EditText
+                    android:id="@+id/loginpass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_background"
                     android:hint="Password"
-                    android:id="@+id/loginpass"
                     android:padding="8dp"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
@@ -85,10 +86,10 @@
                     android:layout_height="wrap_content">
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/loginloginbutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:id="@+id/loginloginbutton"
                         android:background="@drawable/login_button_background"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -123,9 +124,9 @@
                     android:layout_height="wrap_content">
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/loginsignupbutton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/loginsignupbutton"
                         android:background="@drawable/register_now_button_background"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -141,5 +142,16 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loginprogressbar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
