@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.astrocore.DBHelper
 import com.example.astrocore.R
@@ -18,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etPass : EditText
     private lateinit var loginBt: Button
     private lateinit var signupBt : Button
+    private lateinit var progressBar: ProgressBar
     private  var auth : FirebaseAuth = FirebaseAuth.getInstance()
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
         etPass = findViewById(R.id.loginpass)
         loginBt = findViewById(R.id.loginloginbutton)
         signupBt = findViewById(R.id.loginsignupbutton)
+        progressBar = findViewById(R.id.loginprogressbar)
 
         loginBt.setOnClickListener {
             if ( etEmail.text.isEmpty() || etPass.text.isEmpty() ){
@@ -45,12 +48,14 @@ class LoginActivity : AppCompatActivity() {
                 if (etPass.text.isEmpty()) {
                     etPass.error = "Please enter a password"
                 }}else{
+                    progressBar.visibility = View.VISIBLE
                 auth.signInWithEmailAndPassword(etEmail.text.toString(),etPass.text.toString()).addOnSuccessListener {
-
+                    progressBar.visibility = View.GONE
                     //intent=  Intent(this,HomeActivity::class.java)
                     //startActivity(intent)
                     Toast.makeText(this,"Logged in successfully!", Toast.LENGTH_SHORT).show()
                 }.addOnFailureListener{
+                    progressBar.visibility = View.GONE
                     Toast.makeText(this,"Failed check your informations!", Toast.LENGTH_SHORT).show()
                 }
             }

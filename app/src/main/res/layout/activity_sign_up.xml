@@ -37,6 +37,7 @@
                     android:layout_marginBottom="12dp">
 
                     <EditText
+                        android:id="@+id/signupfirstname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/text_field_type_2_background"
@@ -61,6 +62,7 @@
                     android:layout_marginBottom="12dp">
 
                     <EditText
+                        android:id="@+id/signuplastname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/text_field_type_2_background"
@@ -86,6 +88,7 @@
                 android:layout_marginBottom="12dp">
 
                 <EditText
+                    android:id="@+id/signupusername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_background"
@@ -109,6 +112,7 @@
                 android:layout_marginBottom="12dp">
 
                 <EditText
+                    android:id="@+id/signupemail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_background"
@@ -132,6 +136,7 @@
                 android:layout_marginBottom="12dp">
 
                 <EditText
+                    android:id="@+id/signuppassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_background"
@@ -147,6 +152,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.5" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -155,6 +161,7 @@
                 android:layout_marginBottom="12dp">
 
                 <EditText
+                    android:id="@+id/signupconfirmpass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/edit_text_background"
@@ -183,10 +190,11 @@
                     android:layout_height="wrap_content">
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/signupsignup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:background="@drawable/login_button_background"
+                        android:background="@drawable/signup_button_2"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -220,9 +228,10 @@
                     android:layout_height="wrap_content">
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/signuplogin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/register_now_button_background"
+                        android:background="@drawable/login_button_2"
                         android:textColorHint="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -237,5 +246,16 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/signupprogressbar"
+        android:visibility="gone"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
