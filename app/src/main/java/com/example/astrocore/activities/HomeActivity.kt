@@ -1,6 +1,7 @@
 package com.example.astrocore.activities
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,8 @@ import android.text.Layout
 import android.view.View
 import android.widget.TextView
 import com.example.astrocore.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var layout1 :View
@@ -16,7 +19,9 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var persontage1 : TextView
     private lateinit var persontage2 : TextView
     private lateinit var persontage3 : TextView
-    @SuppressLint("MissingInflatedId")
+    private var auth : FirebaseAuth = FirebaseAuth.getInstance()
+    private var db : FirebaseFirestore = FirebaseFirestore.getInstance()
+    @SuppressLint("MissingInflatedId", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Set the status bar and navigation bar to transparent
@@ -36,5 +41,17 @@ class HomeActivity : AppCompatActivity() {
         persontage2 = findViewById(R.id.venuspersontage)
         persontage3 = findViewById(R.id.earthpersontage)
 
+        val id = auth.currentUser!!.uid
+
+        db.collection("users").document(id).get().addOnCompleteListener {
+            persontage1.setText(it.result!!.data?.getValue("mercury").toString().trim()+"%")
+            persontage2.setText(it.result!!.data?.getValue("venus").toString().trim()+"%")
+            persontage3.setText(it.result!!.data?.getValue("earth").toString().trim()+"%")
+        }
+        layout1.setOnClickListener {
+            intent = Intent(this,MercuryActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }
