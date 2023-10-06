@@ -97,7 +97,8 @@ class SignUpActivity : AppCompatActivity() {
                         "mars" to "0",
                         "jupiter" to "0",
                         "uranus" to "0",
-                        "naptune" to "0"
+                        "naptune" to "0",
+                        "earth" to "0"
 
                         )
                     db.collection("users").document(id).set(userMap).addOnSuccessListener {

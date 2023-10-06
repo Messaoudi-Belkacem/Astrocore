@@ -8,10 +8,12 @@ import android.view.View
 import android.widget.Button
 import androidx.core.view.WindowCompat
 import com.example.astrocore.R
+import com.google.firebase.auth.FirebaseAuth
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var signUpButton : Button
     private lateinit var loginButton: Button
+    private  var auth: FirebaseAuth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Set the status bar and navigation bar to transparent
@@ -33,4 +35,11 @@ class WelcomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+    override fun onStart() {
+        super.onStart()
+        if(auth.currentUser != null) {
+            intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }}
 }
