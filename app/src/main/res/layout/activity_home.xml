@@ -23,7 +23,8 @@
             android:layout_width="match_parent"
             android:id="@+id/mercurylayout"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp">
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="8dp">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -78,7 +79,8 @@
             android:layout_width="match_parent"
             android:id="@+id/venuslayout"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp">
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="8dp">
 
             <ImageView
                 android:id="@+id/imageView1"
@@ -133,7 +135,8 @@
             android:layout_width="match_parent"
             android:id="@+id/earthlayout"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp">
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="8dp">
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -188,7 +191,8 @@
             android:layout_width="match_parent"
             android:id="@+id/mars"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp">
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="8dp">
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -243,7 +247,8 @@
             android:layout_width="match_parent"
             android:id="@+id/jupiter"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp">
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="8dp">
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -298,7 +303,8 @@
             android:layout_width="match_parent"
             android:id="@+id/saturnlayout"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp">
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="8dp">
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -353,7 +359,8 @@
             android:layout_width="match_parent"
             android:id="@+id/naptunelayout"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp">
+            android:layout_marginBottom="18dp"
+            android:layout_marginStart="8dp">
 
             <ImageView
                 android:id="@+id/imageView7"
@@ -371,7 +378,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Naptune"
+                android:text="Neptune"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
