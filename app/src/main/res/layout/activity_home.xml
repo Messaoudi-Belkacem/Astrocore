@@ -172,7 +172,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-
+                android:id="@+id/earthpersontage"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:text="100%"
@@ -226,6 +226,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <TextView
+                android:id="@+id/marspersontage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -280,6 +281,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <TextView
+                android:id="@+id/jupiterpersontage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -294,7 +296,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:id="@+id/uranus"
+            android:id="@+id/saturnlayout"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp">
 
@@ -314,7 +316,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Uranus"
+                android:text="Saturn"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -335,6 +337,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/saturnpersontage"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:text="100%"
@@ -348,7 +351,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:id="@+id/naotunelayout"
+            android:id="@+id/naptunelayout"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp">
 
@@ -388,6 +391,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
             <TextView
+                android:id="@+id/naptunepersontage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"

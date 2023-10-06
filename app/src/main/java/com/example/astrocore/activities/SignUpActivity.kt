@@ -91,7 +91,14 @@ class SignUpActivity : AppCompatActivity() {
                         "username" to etUsername.text.toString(),
                         "email" to etEmail.text.toString(),
                         "name" to etFname.text.toString() + " " + etLname.text.toString(),
-                        "level" to 1
+                        "level" to 1,
+                        "mercury" to "0",
+                        "venus" to "0",
+                        "mars" to "0",
+                        "jupiter" to "0",
+                        "uranus" to "0",
+                        "naptune" to "0"
+
                         )
                     db.collection("users").document(id).set(userMap).addOnSuccessListener {
                         progressBar.visibility = View.GONE
