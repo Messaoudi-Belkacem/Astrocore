@@ -21,6 +21,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:id="@+id/mercurylayout"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp">
 
@@ -60,6 +61,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <TextView
+                android:id="@+id/mercurypersontage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -74,6 +76,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:id="@+id/venuslayout"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp">
 
@@ -113,6 +116,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
             <TextView
+                android:id="@+id/venuspersontage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -127,6 +131,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:id="@+id/earthlayout"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp">
 
@@ -167,6 +172,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
+
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:text="100%"
@@ -180,6 +186,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:id="@+id/mars"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp">
 
@@ -233,6 +240,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:id="@+id/jupiter"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp">
 
@@ -286,6 +294,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:id="@+id/uranus"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp">
 
@@ -339,6 +348,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:id="@+id/naotunelayout"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp">
 
