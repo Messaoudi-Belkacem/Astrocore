@@ -7,6 +7,7 @@ import android.view.View
 import com.example.astrocore.R
 
 class SignUpActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Set the status bar and navigation bar to transparent
