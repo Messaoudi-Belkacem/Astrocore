@@ -51,8 +51,8 @@ class LoginActivity : AppCompatActivity() {
                     progressBar.visibility = View.VISIBLE
                 auth.signInWithEmailAndPassword(etEmail.text.toString(),etPass.text.toString()).addOnSuccessListener {
                     progressBar.visibility = View.GONE
-                    //intent=  Intent(this,HomeActivity::class.java)
-                    //startActivity(intent)
+                    intent=  Intent(this,HomeActivity::class.java)
+                    startActivity(intent)
                     Toast.makeText(this,"Logged in successfully!", Toast.LENGTH_SHORT).show()
                 }.addOnFailureListener{
                     progressBar.visibility = View.GONE
