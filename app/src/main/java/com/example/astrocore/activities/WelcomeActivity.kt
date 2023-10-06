@@ -1,13 +1,17 @@
 package com.example.astrocore.activities
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.core.view.WindowCompat
 import com.example.astrocore.R
 
 class WelcomeActivity : AppCompatActivity() {
+    private lateinit var signUpButton : Button
+    private lateinit var loginButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Set the status bar and navigation bar to transparent
@@ -17,5 +21,16 @@ class WelcomeActivity : AppCompatActivity() {
         window.statusBarColor = Color.TRANSPARENT
         window.navigationBarColor = Color.TRANSPARENT
         setContentView(R.layout.activity_welcome)
+        loginButton = findViewById(R.id.alreadyHaveAccButton)
+        signUpButton = findViewById(R.id.getStartedButton)
+
+        signUpButton.setOnClickListener {
+            intent=  Intent(this,SignUpActivity::class.java)
+            startActivity(intent)
+        }
+        loginButton.setOnClickListener {
+            intent=  Intent(this,LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
