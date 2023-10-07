@@ -22,6 +22,7 @@ class QuizActivity : AppCompatActivity() {
     private lateinit var venusQuestionsArrayList: ArrayList<String>
     private lateinit var mercuryAnswersArrayList: ArrayList<Answer>
     private lateinit var venusAnswersArrayList: ArrayList<Answer>
+    private var progress = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -125,50 +126,133 @@ class QuizActivity : AppCompatActivity() {
         optionButton3.setBackgroundResource(R.drawable.answer_button_background)
         optionButton4.setBackgroundResource(R.drawable.answer_button_background)
         optionButton1.setOnClickListener {
+            chooseOneAnswer(1)
             if (answersArrayList[0].correct) {
-                optionButton1.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    resetInterfaceToSecond(mercuryQuestionsArrayList, mercuryAnswersArrayList)
-
+                    optionButton1.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton1.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton1.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton2.setOnClickListener {
+            chooseOneAnswer(2)
             if (answersArrayList[1].correct) {
-                optionButton2.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    resetInterfaceToSecond(mercuryQuestionsArrayList, mercuryAnswersArrayList)
-
+                    optionButton2.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton1.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton1.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton2.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton1.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton1.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton1.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton3.setOnClickListener {
+            chooseOneAnswer(3)
             if (answersArrayList[2].correct) {
-                optionButton3.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    resetInterfaceToSecond(mercuryQuestionsArrayList, mercuryAnswersArrayList)
-
+                    optionButton3.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton2.isEnabled = false
+                    optionButton1.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton1.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton3.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton3.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton2.isEnabled = false
+                    optionButton1.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton1.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton4.setOnClickListener {
+            chooseOneAnswer(4)
             if (answersArrayList[3].correct) {
-                optionButton4.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    resetInterfaceToSecond(mercuryQuestionsArrayList, mercuryAnswersArrayList)
-
+                    optionButton4.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton1.isEnabled = false
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton1.isEnabled = true
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton4.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton4.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton1.isEnabled = false
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton1.isEnabled = true
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                    }
+                }
+            }
         }
-        actionButton.isEnabled = false
         actionButton.text = "Next"
     }
 
@@ -183,50 +267,133 @@ class QuizActivity : AppCompatActivity() {
         optionButton3.setBackgroundResource(R.drawable.answer_button_background)
         optionButton4.setBackgroundResource(R.drawable.answer_button_background)
         optionButton1.setOnClickListener {
+            chooseOneAnswer(1)
             if (answersArrayList[4].correct) {
-                optionButton1.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    resetInterfaceToThird(mercuryQuestionsArrayList, mercuryAnswersArrayList)
-
+                    optionButton1.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton1.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton1.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToThird(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton2.setOnClickListener {
+            chooseOneAnswer(2)
             if (answersArrayList[5].correct) {
-                optionButton2.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    resetInterfaceToThird(mercuryQuestionsArrayList, mercuryAnswersArrayList)
-
+                    optionButton2.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton1.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton1.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton2.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton2.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton1.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToThird(questionsArrayList, answersArrayList)
+                        optionButton1.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton3.setOnClickListener {
+            chooseOneAnswer(3)
             if (answersArrayList[6].correct) {
-                optionButton3.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    resetInterfaceToThird(mercuryQuestionsArrayList, mercuryAnswersArrayList)
-
+                    optionButton3.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton2.isEnabled = false
+                    optionButton1.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton1.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton3.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton3.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton2.isEnabled = false
+                    optionButton1.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToThird(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton1.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton4.setOnClickListener {
+            chooseOneAnswer(4)
             if (answersArrayList[7].correct) {
-                optionButton4.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    resetInterfaceToThird(mercuryQuestionsArrayList, mercuryAnswersArrayList)
-
+                    optionButton4.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton1.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton1.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton4.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton4.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton1.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToThird(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton1.isEnabled = true
+                    }
+                }
+            }
         }
-        actionButton.isEnabled = false
         actionButton.text = "Next"
     }
 
@@ -241,46 +408,133 @@ class QuizActivity : AppCompatActivity() {
         optionButton3.setBackgroundResource(R.drawable.answer_button_background)
         optionButton4.setBackgroundResource(R.drawable.answer_button_background)
         optionButton1.setOnClickListener {
+            chooseOneAnswer(1)
             if (answersArrayList[8].correct) {
-                optionButton1.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    resetInterfaceToFourth(mercuryQuestionsArrayList, mercuryAnswersArrayList)
+                    optionButton1.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton1.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton1.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToFourth(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton2.setOnClickListener {
+            chooseOneAnswer(2)
             if (answersArrayList[9].correct) {
-                optionButton2.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    resetInterfaceToFourth(mercuryQuestionsArrayList, mercuryAnswersArrayList)
+                    optionButton2.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton1.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton1.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton2.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton2.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton1.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToFourth(questionsArrayList, answersArrayList)
+                        optionButton1.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton3.setOnClickListener {
+            chooseOneAnswer(3)
             if (answersArrayList[10].correct) {
-                optionButton3.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    resetInterfaceToFourth(mercuryQuestionsArrayList, mercuryAnswersArrayList)
+                    optionButton3.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton2.isEnabled = false
+                    optionButton1.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton1.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton3.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton3.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton2.isEnabled = false
+                    optionButton1.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToFourth(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton1.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton4.setOnClickListener {
-            if (answersArrayList[11].correct) {
-                optionButton4.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
+            chooseOneAnswer(4)
+            if (answersArrayList[7].correct) {
                 actionButton.setOnClickListener {
-                    resetInterfaceToFourth(mercuryQuestionsArrayList, mercuryAnswersArrayList)
+                    optionButton4.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton1.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton1.isEnabled = true
+                        progress += 25
+                    }
                 }
             }
-            else optionButton4.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton4.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton1.isEnabled = false
+                    actionButton.setOnClickListener {
+                        resetInterfaceToFourth(questionsArrayList, answersArrayList)
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton1.isEnabled = true
+                    }
+                }
+            }
         }
-        actionButton.isEnabled = false
         actionButton.text = "Next"
     }
 
@@ -295,54 +549,217 @@ class QuizActivity : AppCompatActivity() {
         optionButton3.setBackgroundResource(R.drawable.answer_button_background)
         optionButton4.setBackgroundResource(R.drawable.answer_button_background)
         optionButton1.setOnClickListener {
+            chooseOneAnswer(1)
             if (answersArrayList[12].correct) {
-                optionButton1.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    intent =  Intent(this,QuizActivity::class.java)
-                    intent.putExtra("PLANET_NAME", "venus")
-                    startActivity(intent)
+                    optionButton1.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                        if (progress == 100) {
+                            intent =  Intent(this,ResultActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            // here you send progress to the database
+                            intent =  Intent(this,HomeActivity::class.java)
+                            startActivity(intent)
+                        }
+                    }
                 }
             }
-            else optionButton1.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton1.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        if (progress == 100) {
+                            intent =  Intent(this,ResultActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            // here you send progress to the database
+                            intent =  Intent(this,HomeActivity::class.java)
+                            startActivity(intent)
+                        }
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton2.setOnClickListener {
+            chooseOneAnswer(2)
             if (answersArrayList[13].correct) {
-                optionButton2.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    intent =  Intent(this,QuizActivity::class.java)
-                    intent.putExtra("PLANET_NAME", "venus")
-                    startActivity(intent)
+                    optionButton2.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton1.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        optionButton1.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                        if (progress == 100) {
+                            intent =  Intent(this,ResultActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            // here you send progress to the database
+                            intent =  Intent(this,HomeActivity::class.java)
+                            startActivity(intent)
+                        }
+                    }
                 }
             }
-            else optionButton2.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton2.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton1.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        if (progress == 100) {
+                            intent =  Intent(this,ResultActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            // here you send progress to the database
+                            intent =  Intent(this,HomeActivity::class.java)
+                            startActivity(intent)
+                        }
+                        optionButton1.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton3.setOnClickListener {
+            chooseOneAnswer(3)
             if (answersArrayList[14].correct) {
-                optionButton3.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    intent =  Intent(this,QuizActivity::class.java)
-                    intent.putExtra("PLANET_NAME", "venus")
-                    startActivity(intent)
+                    optionButton3.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton2.isEnabled = false
+                    optionButton1.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        optionButton2.isEnabled = true
+                        optionButton1.isEnabled = true
+                        optionButton4.isEnabled = true
+                        progress += 25
+                        if (progress == 100) {
+                            intent =  Intent(this,ResultActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            // here you send progress to the database
+                            intent =  Intent(this,HomeActivity::class.java)
+                            startActivity(intent)
+                        }
+                    }
                 }
             }
-            else optionButton3.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton3.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton2.isEnabled = false
+                    optionButton1.isEnabled = false
+                    optionButton4.isEnabled = false
+                    actionButton.setOnClickListener {
+                        if (progress == 100) {
+                            intent =  Intent(this,ResultActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            // here you send progress to the database
+                            intent =  Intent(this,HomeActivity::class.java)
+                            startActivity(intent)
+                        }
+                        optionButton2.isEnabled = true
+                        optionButton1.isEnabled = true
+                        optionButton4.isEnabled = true
+                    }
+                }
+            }
         }
         optionButton4.setOnClickListener {
+            chooseOneAnswer(4)
             if (answersArrayList[15].correct) {
-                optionButton4.setBackgroundResource(R.drawable.correct_answer_button)
-                actionButton.isEnabled = true
                 actionButton.setOnClickListener {
-                    intent =  Intent(this,QuizActivity::class.java)
-                    intent.putExtra("PLANET_NAME", "venus")
-                    startActivity(intent)
+                    optionButton4.setBackgroundResource(R.drawable.correct_answer_button)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton1.isEnabled = false
+                    actionButton.setOnClickListener {
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton1.isEnabled = true
+                        progress += 25
+                        if (progress == 100) {
+                            intent =  Intent(this,ResultActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            // here you send progress to the database
+                            intent =  Intent(this,HomeActivity::class.java)
+                            startActivity(intent)
+                        }
+                    }
                 }
             }
-            else optionButton4.setBackgroundResource(R.drawable.wrong_answer_button_background)
+            else {
+                actionButton.setOnClickListener {
+                    optionButton4.setBackgroundResource(R.drawable.wrong_answer_button_background)
+                    optionButton2.isEnabled = false
+                    optionButton3.isEnabled = false
+                    optionButton1.isEnabled = false
+                    actionButton.setOnClickListener {
+                        optionButton2.isEnabled = true
+                        optionButton3.isEnabled = true
+                        optionButton1.isEnabled = true
+                        if (progress == 100) {
+                            intent =  Intent(this,ResultActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            // here you send progress to the database
+                            intent =  Intent(this,HomeActivity::class.java)
+                            startActivity(intent)
+                        }
+                    }
+                }
+            }
         }
-        actionButton.isEnabled = false
         actionButton.text = "Next"
+    }
+    private fun chooseOneAnswer(i: Int) {
+        when (i) {
+            1 -> {
+                optionButton1.setBackgroundResource(R.drawable.selected_answer_button_background)
+                optionButton2.setBackgroundResource(R.drawable.answer_button_background)
+                optionButton3.setBackgroundResource(R.drawable.answer_button_background)
+                optionButton4.setBackgroundResource(R.drawable.answer_button_background)
+            }
+            2 -> {
+                optionButton1.setBackgroundResource(R.drawable.answer_button_background)
+                optionButton2.setBackgroundResource(R.drawable.selected_answer_button_background)
+                optionButton3.setBackgroundResource(R.drawable.answer_button_background)
+                optionButton4.setBackgroundResource(R.drawable.answer_button_background)
+            }
+            3 -> {
+                optionButton1.setBackgroundResource(R.drawable.answer_button_background)
+                optionButton2.setBackgroundResource(R.drawable.answer_button_background)
+                optionButton3.setBackgroundResource(R.drawable.selected_answer_button_background)
+                optionButton4.setBackgroundResource(R.drawable.answer_button_background)
+            }
+            4 -> {
+                optionButton1.setBackgroundResource(R.drawable.answer_button_background)
+                optionButton2.setBackgroundResource(R.drawable.answer_button_background)
+                optionButton3.setBackgroundResource(R.drawable.answer_button_background)
+                optionButton4.setBackgroundResource(R.drawable.selected_answer_button_background)
+            }
+        }
     }
 }

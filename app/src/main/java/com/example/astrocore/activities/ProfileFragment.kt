@@ -27,7 +27,7 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView: View = inflater.inflate(R.layout.fragment_home, container, false)
+        val rootView: View = inflater.inflate(R.layout.fragment_profile, container, false)
         Log.d("AboutMovieFragment.java", "The onCreateView method called")
         logoutBt = rootView.findViewById(R.id.button4)
         tname = rootView.findViewById(R.id.textView4)
@@ -45,7 +45,5 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
         return rootView
-
-
     }
 }
