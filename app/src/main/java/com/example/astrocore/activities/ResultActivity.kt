@@ -7,9 +7,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.example.astrocore.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class ResultActivity : AppCompatActivity() {
     lateinit var button: Button
+    private  var db : FirebaseFirestore = FirebaseFirestore.getInstance()
+    private  var auth : FirebaseAuth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Set the status bar and navigation bar to transparent
@@ -21,8 +25,14 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_result)
         button = findViewById(R.id.return_home_button)
         button.setOnClickListener {
-            intent =  Intent(this,HomeActivity::class.java)
-            startActivity(intent)
+            val updates = hashMapOf<String,Any>(
+                "level" to 2
+            )
+            db.collection("users").document(auth.currentUser!!.uid).update(updates).addOnSuccessListener {
+                intent =  Intent(this,HomeActivity::class.java)
+                startActivity(intent)
+            }
+
         }
     }
 }

@@ -44,6 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
+                    android:textColor="@color/white"
                     android:background="@drawable/answer_button_background"
                     android:textColorHint="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -60,6 +61,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonOption2"
+                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
@@ -80,6 +82,7 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonOption3"
                     android:layout_width="wrap_content"
+                    android:textColor="@color/white"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:background="@drawable/answer_button_background"
@@ -100,6 +103,7 @@
                     android:id="@+id/buttonOption4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/white"
                     android:background="@drawable/answer_button_background"
                     android:textColorHint="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -121,6 +125,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/actionButton"
                 android:layout_width="wrap_content"
+                android:textColor="@color/white"
                 android:layout_height="wrap_content"
                 android:background="@drawable/next_button_background"
                 android:textColorHint="@color/white"

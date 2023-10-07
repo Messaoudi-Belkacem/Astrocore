@@ -30,6 +30,7 @@
         android:text="LICH"
         android:textColor="@color/white"
         android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -81,7 +82,7 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="68%"
+        android:text="13%"
         android:textSize="22sp"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

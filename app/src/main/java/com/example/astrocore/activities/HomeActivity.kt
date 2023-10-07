@@ -59,7 +59,7 @@ class HomeActivity : AppCompatActivity() {
                 }
                 R.id.Profile -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainer, profileFragment)
+                        .replace(R.id.fragmentContainer,profileFragment)
                         .commit()
                     true
                 }

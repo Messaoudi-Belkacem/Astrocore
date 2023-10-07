@@ -9,6 +9,8 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.astrocore.Answer
 import com.example.astrocore.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class QuizActivity : AppCompatActivity() {
 
@@ -23,7 +25,8 @@ class QuizActivity : AppCompatActivity() {
     private lateinit var mercuryAnswersArrayList: ArrayList<Answer>
     private lateinit var venusAnswersArrayList: ArrayList<Answer>
     private var progress = 0
-
+    private  var db : FirebaseFirestore = FirebaseFirestore.getInstance()
+    private  var auth : FirebaseAuth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -566,6 +569,10 @@ class QuizActivity : AppCompatActivity() {
                             startActivity(intent)
                         } else {
                             // here you send progress to the database
+                            val updates = hashMapOf<String,Any>(
+                                "mercury" to progress.toString()
+                            )
+                            db.collection("users").document(auth.currentUser!!.uid).update(updates)
                             intent =  Intent(this,HomeActivity::class.java)
                             startActivity(intent)
                         }
@@ -584,6 +591,10 @@ class QuizActivity : AppCompatActivity() {
                             startActivity(intent)
                         } else {
                             // here you send progress to the database
+                            val updates = hashMapOf<String,Any>(
+                                "mercury" to progress.toString()
+                            )
+                            db.collection("users").document(auth.currentUser!!.uid).update(updates)
                             intent =  Intent(this,HomeActivity::class.java)
                             startActivity(intent)
                         }
@@ -612,6 +623,10 @@ class QuizActivity : AppCompatActivity() {
                             startActivity(intent)
                         } else {
                             // here you send progress to the database
+                            val updates = hashMapOf<String,Any>(
+                                "mercury" to progress.toString()
+                            )
+                            db.collection("users").document(auth.currentUser!!.uid).update(updates)
                             intent =  Intent(this,HomeActivity::class.java)
                             startActivity(intent)
                         }
@@ -630,6 +645,10 @@ class QuizActivity : AppCompatActivity() {
                             startActivity(intent)
                         } else {
                             // here you send progress to the database
+                            val updates = hashMapOf<String,Any>(
+                                "mercury" to progress.toString()
+                            )
+                            db.collection("users").document(auth.currentUser!!.uid).update(updates)
                             intent =  Intent(this,HomeActivity::class.java)
                             startActivity(intent)
                         }
@@ -658,8 +677,14 @@ class QuizActivity : AppCompatActivity() {
                             startActivity(intent)
                         } else {
                             // here you send progress to the database
-                            intent =  Intent(this,HomeActivity::class.java)
-                            startActivity(intent)
+                            val updates = hashMapOf<String,Any>(
+                                "mercury" to progress.toString()
+                            )
+                            db.collection("users").document(auth.currentUser!!.uid).update(updates).addOnSuccessListener {
+                                intent =  Intent(this,HomeActivity::class.java)
+                                startActivity(intent)
+                            }
+
                         }
                     }
                 }
@@ -676,8 +701,13 @@ class QuizActivity : AppCompatActivity() {
                             startActivity(intent)
                         } else {
                             // here you send progress to the database
-                            intent =  Intent(this,HomeActivity::class.java)
-                            startActivity(intent)
+                            val updates = hashMapOf<String,Any>(
+                                "mercury" to progress.toString()
+                            )
+                            db.collection("users").document(auth.currentUser!!.uid).update(updates).addOnSuccessListener {
+                                intent =  Intent(this,HomeActivity::class.java)
+                                startActivity(intent)
+                            }
                         }
                         optionButton2.isEnabled = true
                         optionButton1.isEnabled = true
@@ -704,8 +734,13 @@ class QuizActivity : AppCompatActivity() {
                             startActivity(intent)
                         } else {
                             // here you send progress to the database
-                            intent =  Intent(this,HomeActivity::class.java)
-                            startActivity(intent)
+                            val updates = hashMapOf<String,Any>(
+                                "mercury" to progress.toString()
+                            )
+                            db.collection("users").document(auth.currentUser!!.uid).update(updates).addOnSuccessListener {
+                                intent =  Intent(this,HomeActivity::class.java)
+                                startActivity(intent)
+                            }
                         }
                     }
                 }
@@ -725,8 +760,13 @@ class QuizActivity : AppCompatActivity() {
                             startActivity(intent)
                         } else {
                             // here you send progress to the database
-                            intent =  Intent(this,HomeActivity::class.java)
-                            startActivity(intent)
+                            val updates = hashMapOf<String,Any>(
+                                "mercury" to progress.toString()
+                            )
+                            db.collection("users").document(auth.currentUser!!.uid).update(updates).addOnSuccessListener {
+                                intent =  Intent(this,HomeActivity::class.java)
+                                startActivity(intent)
+                            }
                         }
                     }
                 }

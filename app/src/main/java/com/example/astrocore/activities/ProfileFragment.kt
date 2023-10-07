@@ -19,6 +19,8 @@ class ProfileFragment : Fragment() {
     private var auth : FirebaseAuth = FirebaseAuth.getInstance()
     private var db : FirebaseFirestore = FirebaseFirestore.getInstance()
     private lateinit var logoutBt :Button
+    private lateinit var aboutusBt :Button
+    private lateinit var helpBt :Button
     private lateinit var tname : TextView
     private lateinit var tuserName : TextView
     @SuppressLint("MissingInflatedId")
@@ -30,6 +32,7 @@ class ProfileFragment : Fragment() {
         val rootView: View = inflater.inflate(R.layout.fragment_profile, container, false)
         Log.d("AboutMovieFragment.java", "The onCreateView method called")
         logoutBt = rootView.findViewById(R.id.button4)
+        aboutusBt = rootView.findViewById(R.id.button2)
         tname = rootView.findViewById(R.id.textView4)
         tuserName = rootView.findViewById(R.id.textView9)
 
@@ -37,10 +40,17 @@ class ProfileFragment : Fragment() {
         db.collection("users").document(id).get().addOnCompleteListener {
             val name = it.result!!.data?.getValue("name").toString().trim()
             val uname = it.result!!.data?.getValue("username").toString().trim()
+            tname.setText(name)
+            tuserName.setText(uname)
         }
         logoutBt.setOnClickListener {
             auth.signOut()
             val intent = Intent(this.context,WelcomeActivity::class.java)
+            intent.putExtra("h","hh")
+            startActivity(intent)
+        }
+        aboutusBt.setOnClickListener {
+            val intent = Intent(this.context,AboutusActivity::class.java)
             intent.putExtra("h","hh")
             startActivity(intent)
         }
