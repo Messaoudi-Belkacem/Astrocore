@@ -8,7 +8,7 @@
     android:background="@drawable/main_page_background">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="130dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
