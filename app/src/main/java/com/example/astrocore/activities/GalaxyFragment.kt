@@ -14,7 +14,7 @@ class GalaxyFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView: View = inflater.inflate(R.layout.fragment_home, container, false)
+        val rootView: View = inflater.inflate(R.layout.fragment_galaxy, container, false)
         Log.d("AboutMovieFragment.java", "The onCreateView method called")
         return rootView
     }

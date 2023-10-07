@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Astrocore"
         tools:targetApi="31">
         <activity
+            android:name=".activities.QuizActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.VenusActivity"
             android:exported="false" />
         <activity
