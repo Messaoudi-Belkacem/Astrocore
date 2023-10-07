@@ -28,7 +28,7 @@
 
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="32dp"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -38,12 +38,12 @@
             tools:listitem="@layout/planet_info" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn1"
+            android:id="@+id/btn"
 
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/yellow"
+            android:background="@drawable/circular_button"
 
             android:text="Quiz!"
             android:textAlignment="center"
