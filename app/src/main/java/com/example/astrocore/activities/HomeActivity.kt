@@ -41,6 +41,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun initializeUI() {
         val bottomNavigationBar = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationBar.selectedItemId(R.id.Home)
         bottomNavigationBar.setOnItemSelectedListener { item: MenuItem ->
             when (item.itemId) {
                 R.id.Galaxy -> {

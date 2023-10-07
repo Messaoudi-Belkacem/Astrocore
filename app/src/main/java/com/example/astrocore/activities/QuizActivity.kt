@@ -275,7 +275,7 @@ class QuizActivity : AppCompatActivity() {
                     optionButton3.isEnabled = false
                     optionButton4.isEnabled = false
                     actionButton.setOnClickListener {
-                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        resetInterfaceToThird(questionsArrayList, answersArrayList)
                         optionButton2.isEnabled = true
                         optionButton3.isEnabled = true
                         optionButton4.isEnabled = true
@@ -307,7 +307,7 @@ class QuizActivity : AppCompatActivity() {
                     optionButton3.isEnabled = false
                     optionButton4.isEnabled = false
                     actionButton.setOnClickListener {
-                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        resetInterfaceToThird(questionsArrayList, answersArrayList)
                         optionButton1.isEnabled = true
                         optionButton3.isEnabled = true
                         optionButton4.isEnabled = true
@@ -339,7 +339,7 @@ class QuizActivity : AppCompatActivity() {
                     optionButton1.isEnabled = false
                     optionButton4.isEnabled = false
                     actionButton.setOnClickListener {
-                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        resetInterfaceToThird(questionsArrayList, answersArrayList)
                         optionButton2.isEnabled = true
                         optionButton1.isEnabled = true
                         optionButton4.isEnabled = true
@@ -371,7 +371,7 @@ class QuizActivity : AppCompatActivity() {
                     optionButton3.isEnabled = false
                     optionButton1.isEnabled = false
                     actionButton.setOnClickListener {
-                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        resetInterfaceToThird(questionsArrayList, answersArrayList)
                         optionButton2.isEnabled = true
                         optionButton3.isEnabled = true
                         optionButton1.isEnabled = true
@@ -416,7 +416,7 @@ class QuizActivity : AppCompatActivity() {
                     optionButton3.isEnabled = false
                     optionButton4.isEnabled = false
                     actionButton.setOnClickListener {
-                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        resetInterfaceToFourth(questionsArrayList, answersArrayList)
                         optionButton2.isEnabled = true
                         optionButton3.isEnabled = true
                         optionButton4.isEnabled = true
@@ -448,7 +448,7 @@ class QuizActivity : AppCompatActivity() {
                     optionButton3.isEnabled = false
                     optionButton4.isEnabled = false
                     actionButton.setOnClickListener {
-                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        resetInterfaceToFourth(questionsArrayList, answersArrayList)
                         optionButton1.isEnabled = true
                         optionButton3.isEnabled = true
                         optionButton4.isEnabled = true
@@ -480,7 +480,7 @@ class QuizActivity : AppCompatActivity() {
                     optionButton1.isEnabled = false
                     optionButton4.isEnabled = false
                     actionButton.setOnClickListener {
-                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        resetInterfaceToFourth(questionsArrayList, answersArrayList)
                         optionButton2.isEnabled = true
                         optionButton1.isEnabled = true
                         optionButton4.isEnabled = true
@@ -512,7 +512,7 @@ class QuizActivity : AppCompatActivity() {
                     optionButton3.isEnabled = false
                     optionButton1.isEnabled = false
                     actionButton.setOnClickListener {
-                        resetInterfaceToSecond(questionsArrayList, answersArrayList)
+                        resetInterfaceToFourth(questionsArrayList, answersArrayList)
                         optionButton2.isEnabled = true
                         optionButton3.isEnabled = true
                         optionButton1.isEnabled = true
