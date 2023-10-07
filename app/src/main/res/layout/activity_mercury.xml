@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@drawable/circular_button"
-
+            android:layout_marginBottom="32dp"
             android:text="Quiz!"
             android:textAlignment="center"
             android:textColor="@color/white"

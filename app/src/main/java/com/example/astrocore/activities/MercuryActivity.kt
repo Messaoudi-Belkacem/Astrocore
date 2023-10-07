@@ -29,9 +29,10 @@ class MercuryActivity : AppCompatActivity() {
         window.navigationBarColor = Color.TRANSPARENT
         setContentView(R.layout.activity_mercury)
 
-        quizButton = findViewById(R.id.btn1)
+        quizButton = findViewById(R.id.btn)
         quizButton.setOnClickListener {
-            intent =  Intent(this,VenusActivity::class.java)
+            intent =  Intent(this,QuizActivity::class.java)
+            intent.putExtra("PLANET_NAME", "mercury")
             startActivity(intent)
         }
 
