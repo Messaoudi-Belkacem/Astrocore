@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/blue"
+        app:itemBackground="@drawable/custom_menu_item_background"
         app:menu="@menu/bottom_nav_menu" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
