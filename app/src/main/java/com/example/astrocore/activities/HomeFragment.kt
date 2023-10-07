@@ -1,5 +1,6 @@
 package com.example.astrocore.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -29,6 +30,18 @@ class HomeFragment : Fragment() {
         persontage1 = rootView.findViewById(R.id.mercurypersontage)
         persontage2 = rootView.findViewById(R.id.venuspersontage)
         persontage3 = rootView.findViewById(R.id.earthpersontage)
+        layout1.setOnClickListener {
+            val intent = Intent(this.context,MercuryActivity::class.java)
+            intent.putExtra("h","hh")
+            startActivity(intent)
+        }
+        layout2.setOnClickListener {
+            val intent = Intent(this.context,VenusActivity::class.java)
+            intent.putExtra("h","hh")
+            startActivity(intent)
+        }
         return rootView
+
+
     }
 }

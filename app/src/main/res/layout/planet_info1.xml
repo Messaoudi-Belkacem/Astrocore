@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/infoname"
+        android:id="@+id/infoname1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/infodescription"
+        android:id="@+id/infodescription1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -34,16 +34,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoname" />
+        app:layout_constraintTop_toBottomOf="@+id/infoname1" />
 
     <ImageView
-        android:id="@+id/infoimg"
+        android:id="@+id/infoimg1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infodescription"
+        app:layout_constraintTop_toBottomOf="@+id/infodescription1"
         app:srcCompat="@drawable/planet" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,12 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/planet__1_"
     android:layout_height="match_parent"
-    android:background="@drawable/planet"
-    tools:context=".activities.MercuryActivity">
-
-
-
+    tools:context=".activities.VenusActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -23,7 +20,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
 
-            android:id="@+id/rc"
+            android:id="@+id/rc1"
             android:layout_width="match_parent"
 
             android:layout_height="wrap_content"
@@ -37,22 +34,19 @@
             tools:ignore="MissingConstraints"
             tools:listitem="@layout/planet_info" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/btn1"
-
-            android:layout_width="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/yellow"
-
+            android:background="@color/black"
             android:text="Quiz!"
             android:textAlignment="center"
-            android:textColor="@color/white"
             android:textSize="24dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="650dp"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
