@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment
 import com.example.astrocore.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlin.math.log
 
 class ProfileFragment : Fragment() {
     private var auth : FirebaseAuth = FirebaseAuth.getInstance()
@@ -50,7 +49,7 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
         aboutusBt.setOnClickListener {
-            val intent = Intent(this.context,AboutusActivity::class.java)
+            val intent = Intent(this.context,AboutUsActivity::class.java)
             intent.putExtra("h","hh")
             startActivity(intent)
         }

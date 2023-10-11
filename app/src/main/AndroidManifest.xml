@@ -45,7 +45,7 @@
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".activities.AboutusActivity"
+            android:name=".activities.AboutUsActivity"
             android:exported="true" />
         <activity
             android:name=".activities.SignUpActivity"

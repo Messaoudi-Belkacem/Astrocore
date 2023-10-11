@@ -8,6 +8,12 @@
     android:background="@color/blue"
     tools:context=".activities.HomeActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/home_page_top_background" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"

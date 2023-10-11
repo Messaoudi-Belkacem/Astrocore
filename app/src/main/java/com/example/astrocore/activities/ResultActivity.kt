@@ -28,11 +28,9 @@ class ResultActivity : AppCompatActivity() {
             val updates = hashMapOf<String,Any>(
                 "level" to 2
             )
-            db.collection("users").document(auth.currentUser!!.uid).update(updates).addOnSuccessListener {
-                intent =  Intent(this,HomeActivity::class.java)
-                startActivity(intent)
-            }
-
+            db.collection("users").document(auth.currentUser!!.uid).update(updates)
+            intent =  Intent(this,HomeActivity::class.java)
+            startActivity(intent)
         }
     }
 }
